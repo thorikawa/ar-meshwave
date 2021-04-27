@@ -46,11 +46,11 @@
 
             float4 frag (v2f i) : SV_Target
             {
-                float alphaPhase = -4.0 * i.worldPos.z + 8.0 * _Time.y;
-                float colorValue = frac(alphaPhase * (1.0 / (14.0 * 3.141592)));
+                float alphaPhase = -8.0 * i.worldPos.z + 8.0 * _Time.y;
+                float colorValue = frac(alphaPhase * (1.0 / (12.0 * 3.141592)));
                 float alphaWaveValue = 0.5 * (sin(alphaPhase) + 1.0);
-                fixed4 col = tex2D(_MainTex, float2(0.5, colorValue));
-                float alpha = step(0.9, alphaWaveValue) * 0.3;
+                fixed4 col = 2.5 * tex2D(_MainTex, float2(0.5, colorValue));
+                float alpha = step(0.9, alphaWaveValue);
                 col.a = alpha;
                 return col;
             }
