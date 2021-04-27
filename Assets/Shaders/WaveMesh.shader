@@ -50,7 +50,7 @@
                 float colorValue = frac(alphaPhase * (1.0 / (12.0 * 3.141592)));
                 float alphaWaveValue = 0.5 * (sin(alphaPhase) + 1.0);
                 fixed4 col = 2.5 * tex2D(_MainTex, float2(0.5, colorValue));
-                float alpha = step(0.9, alphaWaveValue);
+                float alpha = step(0.92, alphaWaveValue) * 0.8;
                 col.a = alpha;
                 return col;
             }
