@@ -58,7 +58,7 @@
 
             float4 frag (v2f i) : SV_Target
             {
-                float phase = (i.worldPos.z + _Speed * _Time.y) / _CycleLength;
+                float phase = (-i.worldPos.z + _Speed * _Time.y) / _CycleLength;
                 float colorValue = frac(phase);
                 float alphaValue = frac(phase * _NumOfSplits);
                 float4 col = _Intensity * tex2D(_MainTex, float2(0.5, colorValue));
