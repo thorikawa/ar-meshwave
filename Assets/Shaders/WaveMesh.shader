@@ -29,12 +29,14 @@
             {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
+                float3 normal : NORMAL;
             };
 
             struct v2f
             {
                 float2 uv : TEXCOORD0;
                 float3 worldPos : TEXCOORD1;
+                float worldRefl : TEXCOORD2;
                 float4 vertex : SV_POSITION;
             };
 
@@ -50,7 +52,10 @@
             v2f vert (appdata v)
             {
                 v2f o;
-                o.worldPos = mul (unity_ObjectToWorld, v.vertex);
+                o.worldPos = mul(unity_ObjectToWorld, v.vertex);
+                float3 worldViewDir = normalize(UnityWorldSpaceViewDir(o.worldPos));
+                float3 worldNormal = mul(unity_ObjectToWorld, v.normal);
+                o.worldRefl = dot(worldViewDir, worldNormal);
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 return o;
@@ -63,7 +68,8 @@
                 float alphaValue = frac(phase * _NumOfSplits);
                 float4 col = _Intensity * tex2D(_MainTex, float2(0.5, colorValue));
                 float alpha = (1.0 - step(_Width, alphaValue)) * _MaxAlpha;
-                col.a = alpha;
+                col.rgb = col.rgb;
+                col.a = 0.0;
                 return col;
             }
             ENDCG
