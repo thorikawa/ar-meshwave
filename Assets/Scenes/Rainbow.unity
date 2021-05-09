@@ -701,16 +701,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7177254676707753795, guid: 62d117da371974c7cb533ad75475f31b,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7177254676707753795, guid: 62d117da371974c7cb533ad75475f31b,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 7177254678397582517, guid: 62d117da371974c7cb533ad75475f31b,
         type: 3}
       propertyPath: m_Name
