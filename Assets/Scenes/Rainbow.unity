@@ -444,8 +444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816b289ef451e094f9ae174fb4cf8db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UseCustomMaterial: 0
-  m_CustomMaterial: {fileID: 0}
+  m_UseCustomMaterial: 1
+  m_CustomMaterial: {fileID: 2100000, guid: 55f28ca0fa7c7482393921e175ddeaee, type: 2}
 --- !u!114 &571260625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,6 +701,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7177254676707753795, guid: 62d117da371974c7cb533ad75475f31b,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7177254676707753795, guid: 62d117da371974c7cb533ad75475f31b,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7177254678397582517, guid: 62d117da371974c7cb533ad75475f31b,
         type: 3}
       propertyPath: m_Name
